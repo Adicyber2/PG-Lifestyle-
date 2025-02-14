@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Cards with Image Upload</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .form-container {
+      margin-bottom: 20px;
+    }
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .card {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 250px;
+      overflow: hidden;
+      text-align: center;
+      background-color: #f9f9f9;
+    }
+    .card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+    .card h3 {
+      margin: 10px 0;
+    }
+    .card p {
+      padding: 0 10px 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Create a Card</h2>
+    <form id="cardForm">
+      <label for="imageFile">Upload Image:</label><br>
+      <input type="file" id="imageFile" name="imageFile" accept="image/*" required><br><br>
+      <label for="title">Title:</label><br>
+      <input type="text" id="title" name="title" placeholder="Enter card title" required><br><br>
+      <label for="description">Description:</label><br>
+      <textarea id="description" name="description" placeholder="Enter card description" rows="4" required></textarea><br><br>
+      <button type="submit">Add Card</button>
+    </form>
+  </div>
+
+  <div id="card-container" class="card-container"></div>
+
+  <script >
+// Get references to the form and card container
+const cardForm = document.getElementById('cardForm');
+const cardContainer = document.getElementById('card-container');
+
+// Event listener for form submission
+cardForm.addEventListener('submit', function (event) {
+  event.preventDefault(); // Prevent form from refreshing the page
+
+  // Get the file input and other inputs
+  const imageFile = document.getElementById('imageFile').files[0];
+  const title = document.getElementById('title').value.trim();
+  const description = document.getElementById('description').value.trim();
+
+  // Validate inputs
+  if (!imageFile || !title || !description) {
+    alert('Please fill out all fields!');
+    return;
+  }
+
+  // Use FileReader to read the image file
+  const reader = new FileReader();
+  reader.onload = function (e) {
+    // Create a new card element
+    const card = document.createElement('div');
+    card.className = 'card';
+
+    // Add content to the card
+    card.innerHTML = `
+      <img src="${e.target.result}" alt="Uploaded Image">
+      <h3>${title}</h3>
+      <p>${description}</p>
+    `;
+
+    // Append the card to the card container
+    cardContainer.appendChild(card);
+
+    // Clear the form inputs
+    cardForm.reset();
+  };
+
+  // Read the image file as a data URL
+  reader.readAsDataURL(imageFile);
+});
+  </script>
+</body>
+</html>

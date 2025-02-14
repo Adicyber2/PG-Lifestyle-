@@ -1,0 +1,29 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <button id="in">+</button>
+  <input value="0" id="input">
+  <button id="de" >-</button>
+  <script>
+    const posi=document.getElementById("in");
+    const dec=document.getElementById("de");
+    const counterDisplay=document.querySelector ("input");
+    let counter=0;
+    posi.addEventListener("click",function(){
+      counter++;
+      counterDisplay.value=counter;
+      
+    });
+    dec.addEventListener("click",function(){
+      counter--;
+      counterDisplay.value=counter;
+      
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,275 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" rel="stylesheet" />
+</head>
+<style>
+      .main{
+      height: 100%;
+      width:100%;
+    }
+    .navbar{
+ 
+      width:100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      
+    }
+    .nav-logo{
+      height: 50px;
+      width:70px;
+      margin-top: 3%;
+   
+    }
+    nav-btn{
+      
+      width:100%;
+      display: flex;
+      justify-content: space-between;
+    }
+    .btn{
+      font-size: 1.2rem;
+      margin-top: 10%;
+      margin-right:25px;
+      background-color: white;
+      border: none;
+    }
+    .bread{
+      height:50px;
+      width:100%;
+      display:flex;
+      align-items: center;
+      background-color:gray;
+    }
+    .contaner{
+      padding: 10px;
+      
+    }
+    .image{
+      height: 400px;
+      width: 100%;
+      
+    }
+    .butt{
+      margin-top: -200px;
+      width:96.3%;
+      position: absolute ;
+      display: flex;
+      justify-content: space-between;
+      
+      }
+    .btn1{
+      height: 2.5rem;
+      width:3rem;
+      margin-left: 2rem;
+      margin-right:2rem;
+
+      font-size: 2rem;
+      border:none;
+    }
+    
+    .card{
+     display: flex;
+     justify-content: center;
+     flex-wrap:wrap;
+     gap: 10px
+    }
+    .card-item{
+      height: 250px;
+      width: 70%;
+      display: flex;
+      
+    }
+    .card-item:hover,.image:hover{
+      border:0.2rem solid darkorange;
+    }
+    @media(max-width:768px){
+      .card-item{
+        flex-direction: column;
+      }
+      .card-item{
+        height:300px;
+        
+      }
+   
+      
+    }
+   
+    .text-card{
+      height:30px;
+      width: 100%;
+      margin-left: 10px;
+      
+    }
+    .istar{
+      width: 100%;
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      
+    }
+    .star{
+      display: flex;
+    }
+    
+   
+    .property-name h1{
+      margin-top: 10px;
+      font-size: 2rem;
+    }
+    
+    
+        .uni{
+      height: 50px;
+      width:50px;
+    }
+    
+    .price{
+      display: flex;
+      justify-content: space-between;
+      
+    }
+    .h1{
+      font-size: 1.3rem;
+      margin-top: 20px;
+    }
+    .h1 span{
+      font-size: 1rem;
+      color: lightgray;
+    }
+    .btn2{
+      height: 50px;
+      width:25%;
+      font-size: 1.2rem;
+      margin-top:10px;
+      margin-right: 20px;
+      color: white;
+      background-color: deepskyblue;
+      border-radius: 10px 0px;
+    }
+    
+     #home-text{
+   
+    color: deepskyblue;
+    font-size: 1rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-left: 10px;
+    
+  }
+       #home-text2{
+   
+    color: darkgray;
+    font-size: 1rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-left: 10px;
+    
+  }
+  
+  .comman{
+    font-size: 1rem;
+    margin-left: 10px;
+  }
+    
+</style>
+<body>
+  <div class="main">
+    <div class="navbar">
+      <img class="nav-logo" src="/pG life/logo.png" alt="">
+      <div class="nav-btn">
+        <button class="btn" type="submit">signup</button>
+        
+        <button class="btn" id="login" type="submit">login</button>
+        
+      </div>
+      
+    </div>
+    <div class="bread">
+      <a id="home-text" href="adi.html">Home</a><span class="comman">/</span>
+      <a id="home-text">Mumbai</a><span class="comman">/</span>
+      <a id="home-text2">Navkar Paying Guest</a>
+    </div>
+    
+    <div class="contaner">
+      <img class="image"  src="/pG life/6343da10f7206b0f.jpg"/>
+      <div class="butt">
+        <button onclick="prveImg()" class="btn1"><</button>
+        <button onclick="nextImg()" class="btn1">></button>
+      </div>
+    </div>
+    
+    <div class="card">
+      <div class="card-item" id="first">
+        <div class="text-card">
+          <div class="istar">
+            <div class="star">
+              
+            
+            
+           <i class="fas fa-star"></i>
+
+           <i class="fas fa-star"></i>
+
+           <i class="fas fa-star"></i>
+           <i class="fas fa-star"></i>
+           <i class="far fa-star"></i>
+           
+            </div>
+            <div class="interested-container">
+
+            <i class="far fa-heart"></i>
+
+           <div class="interested-text">2 interested</div>
+           </div>
+          </div>
+          <div class="property-name">
+             <h1>Navkar Paying Guest</h1>
+
+          </div>
+          <div class="male">
+            <img class="uni" src="/images/male.png"/>
+            
+          </div>
+          <div class="price">
+            <h1 class="h1">Rs-9,500/<span>per month</span></h1>
+            <button onclick="shift()"  id="btn" class="btn2" >Book Now</button>
+            
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+   </div>
+  
+  <script>
+    const images=["/pG life/6343da10f7206b0f.jpg",
+    "/pG life/46ebbb537aa9fb0a.jpg",
+    "/pG life/45109c3e5c063d21.jpg",
+    "/pG life/1dcfc57947b5c712.jpg",
+    "/pG life/1d4f0757fdb86d5f.jpg"];
+    let currentIndex=0;
+    
+    
+    function update(){
+      const img=document.querySelector(".image");
+      img.style.opacity=0;
+      setTimeout(()=>{
+      img.src=images[currentIndex];
+      img.style.opacity=1;
+    },200);
+    }
+    function nextImg (){
+      currentIndex=(currentIndex + 1)%images.length;
+      update();
+    };
+    function prveImg (){
+      currentIndex=(currentIndex - 1 + images.length )%images.length;
+      update();
+    };
+  </script>
+</body>
+</html>

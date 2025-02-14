@@ -1,0 +1,393 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+    .main{
+      height: 100%;
+      width:100%;
+      
+    }
+    .navbar{
+      height: 80px;
+      width:100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      
+    }
+    .nav-logo{
+      height: 50px;
+      width:70px;
+   margin-top: 3%;
+   
+    }
+    nav-btn{
+      height:100%;
+      width:100%;
+      display: flex;
+      justify-content: space-between;
+    }
+    .btn{
+      height: auto;
+   margin-top: 10%;
+   margin-right:20px;
+    }
+    .bread{
+      height:50px;
+      width:100%;
+      display:flex;
+      align-items: center;
+      background-color:gray;
+    }
+    .contaner{
+      margin-top: 70px;
+      height: 100px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      
+    }
+    .option {
+      margin-top: 10px;
+      height: 200px;
+      width:60%;
+      display:flex;
+      justify-content:space-between;
+    }
+    .filter{
+      height: 60px;
+      width: 60px;
+      margin-left: 10px;
+      margin-right: 10px;
+      border:1px solid black;
+      border-radius:50%;
+    }
+    .card{
+     
+     display: flex;
+     justify-content: center;
+     flex-wrap:wrap;
+     gap: 10px
+    }
+    .card-item{
+      margin-top: 30px;
+      height: 250px;
+      width: 70%;
+      display: flex;
+      box-shadow: 5px 5px 16px rgba(0, 0, 0, 0.7);
+      
+    }
+    .card-item:hover{
+      border:0.2rem solid darkorange;
+    }
+    @media(max-width:768px){
+      .card-item{
+        flex-direction: column;
+      }
+      .card-item{
+        height:400px;
+        
+      }
+   
+      
+    }
+    #image{
+      height:180px;
+      width: 270px;
+      margin-left: 10px;
+      margin-top: 15px;
+      object-fit: cover;
+      box-shadow: 5px 5px 16px rgba(0, 0, 0, 0.7);
+      background-size: cover;
+      border-radius:10px;
+    }
+    @media(max-width:768px){
+      #image{
+        height:100px;
+        width: 150px;
+        margin-top: 10px;
+      }
+      .image{
+        display: flex;
+        justify-content: center;
+      }
+    }
+    .text-card{
+      margin-left: 10px;
+      height:40px;
+      width: 100%;
+      
+    }
+    
+    .istar{
+      display:flex;
+      justify-content: space-between;
+    }
+    i{
+      margin-top: 10px;
+      margin-right: 10px;
+    }
+   
+    .property-name h1{
+      font-size: 1.5rem;
+    }
+    .uni{
+      height: 50px;
+      width:50px;
+    }
+    
+    .price{
+      display: flex;
+      justify-content: space-between;
+      
+    }
+    .h1{
+      font-size: 1.3rem;
+      margin-top: 20px;
+    }
+    .h1 span{
+      font-size: 1rem;
+      color: lightgray;
+    }
+    .btn2{
+      height: 30px;
+      width:100px;
+      font-size: 1.1rem;
+      margin-top:10px;
+      margin-right: 20px;
+      background-color: royalblue;
+      border-radius: 10px 0px;
+    }
+    
+    /** Filter popup**/
+    #main{
+   display: flex;
+   justify-content: center;
+  }
+      .full{
+    height:250px;
+    width: 55%;
+    background-color: white;
+    position: absolute;
+    margin-top: -70px;
+    margin-left: 50px;
+    border: 2px solid black;
+    display: none;
+    z-index: 1000;
+  }
+  .full-text {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    
+  }
+  .full-text h1{
+    font-size: 1.8rem;
+    margin-left: 10px;
+  }
+  span{
+    font-size: 1.8rem;
+    margin-right: 10px;
+  }
+  #home-text{
+   
+    color: deepskyblue;
+    font-size: 1rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-left: 10px;
+    
+  }
+  .comman{
+    font-size: 1rem;
+    margin-left: 10px;
+  }
+  .gen{
+    font-size: 1rem;
+    color: gray;
+  }
+  .content {
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .type{
+    height: 2rem;
+    width: 6rem;
+  }
+  .type:hover{
+    background-color:black;
+    color: white;
+  }
+  .final{
+    height: 30%;
+    display:flex;
+    justify-content: center;
+    margin-top: 17px;
+    background-color: darkgray;
+  }
+  .ok{
+    height: 30px;
+    width: 6rem;
+    margin-top: 20px;
+    background-color: limegreen;
+  }
+</style>
+<body>
+<div class="main">
+    <div class="navbar">
+      <img class="nav-logo" src="/pG life/logo.png" alt="">
+      <div class="nav-btn">
+        <button class="btn" type="submit">signup</button>
+        <button class="btn" id="login" type="submit">login</button>
+      </div>
+      
+    </div>
+    <div class="bread">
+      <a id="home-text" href="adi.html">Home</a><span class="comman">/</span>
+      
+      <a id="home-text">Bangalore</a>
+    </div>
+    <div class="contaner">
+      <div class="option">
+        <img id="filter1" class="filter" src="/pG life/filter.png" />
+        <img class="filter" src="/pG life/asc.png"/>
+        <img class="filter" src="/pG life/desc.png"/>
+      </div>
+    </div>
+ 
+ 
+    <div id="main">
+      
+    
+    <div class="full">
+      <div class="full-text">
+        <h1>Filters</h1>
+        <span onclick="close1()" id="close">x</span>
+        
+     </div>
+     <hr />
+     
+     <h1 class="gen">Gender</h1>
+     <hr />
+     <div class="content">
+       <button class="type" >No Filter</button>
+       <button class="type">Unisex</button>
+       <button class="type">Female</button>
+       <button class="type">Male</button>
+     </div>
+     
+     <div class="final">
+       <button class="ok" type="submit">Okay</button>
+       
+     </div>
+    </div>
+    </div>
+    
+    
+    <div class="card">
+      <div class="card-item" id="first">
+        <div class="image">
+          <img id="image" src="/pG life/46ebbb537aa9fb0a.jpg" alt="">
+        </div>
+        <div class="text-card">
+          <div class="istar">
+            <h1>*****</h1>
+            <i>💖</i>
+          </div>
+          <div class="property-name">
+            <h1>Ganpati Paying Guest</h1>
+            
+          </div>
+          <div class="male">
+           <img class="uni" src="/pG life/unisex.png" />
+
+          </div>
+            <div class="price">
+              <h1 class="h1">Rs-8,000/<span>per month</span></h1>
+               <button onclick="shift()"  class="btn2">view</button>
+
+          </div>
+        </div>
+      </div>
+      
+      <div class="card-item" id="second">
+        <div class="image">
+          <img id="image" src="/pG life/45109c3e5c063d21.jpg" alt="">
+        </div>
+        <div class="text-card">
+          <div class="istar">
+            <h1>*****</h1>
+            <i>💖</i>
+          </div>
+          <div class="property-name">
+            <h1>PG for Girls Boriwali West</h1>
+            
+          </div>
+          <div class="male">
+            <img class="uni" src="/images/female.png"/>
+            
+          </div>
+          <div class="price">
+            <h1 class="h1">Rs-8,500/<span>per month</span></h1>
+            <button class="btn2" >view</button>
+            
+          </div>
+        </div>
+      </div>
+      
+      <div class="card-item" id="third">
+        <div class="image">
+          <img id="image" src="/pG life/1dcfc57947b5c712.jpg" alt="">
+        </div>
+        <div class="text-card">
+          <div class="istar">
+            <h1>*****</h1>
+            <i>💖</i>
+          </div>
+          <div class="property-name">
+             <h1>Navkar Paying Guest</h1>
+
+          </div>
+          <div class="male">
+            <img class="uni" src="/images/male.png"/>
+            
+          </div>
+          <div class="price">
+            <h1 class="h1">Rs-9,500/<span>per month</span></h1>
+            <button   id="btn" class="btn2" >view</button>
+            
+          </div>
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+  <script>
+    const popup=document.querySelector(".full");
+    const filter=document.getElementById("filter1");
+    let main=document.querySelector(".main");
+    filter1.addEventListener("click",function(){
+      popup.style.display='block';
+      main.style.backgroundColor='rgba(0,0,0,0.208)'
+    });
+    
+    function close1(){
+      const close=document.getElementById("close");
+      popup.style.display='none';
+      main.style.opacity='1';
+      main.style.backgroundColor='rgba(0,0,0,0)'
+      
+    };
+    
+    function shift(){
+      window.location.href='Bangalore-list.html';
+    }
+  </script>
+</body>
+</html>
